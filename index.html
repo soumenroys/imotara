@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>imotara — An immortal friend for your emotions, guided by a star</title>
+  <meta name="description" content="imotara is a quiet little star. Something new is forming at the intersection of emotion, memory and meaning. Be early." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:title" content="imotara" />
+  <meta property="og:description" content="An immortal friend for your emotions, guided by a star." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://source.unsplash.com/1600x900/?stars,galaxy" />
+  <meta name="theme-color" content="#0a0a0a"/>
+  <style>
+    :root { --bg: #0a0a0a; --fg: #e6e6e6; --muted: #9aa0a6; --accent: #8b5cf6; }
+    html,body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+    .starfield { position: absolute; inset: 0; pointer-events:none; mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 80%); }
+    .glow { filter: drop-shadow(0 0 18px rgba(139,92,246,.45)) drop-shadow(0 0 48px rgba(139,92,246,.25)); }
+    .blur-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+    .shimmer { background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.08) 30%, transparent 60%); background-size: 200% 100%; animation: shimmer 6s infinite; }
+    @keyframes shimmer { 0% {background-position: 200% 0;} 100% {background-position: -200% 0;} }
+  </style>
+</head>
+<body>
+  <!-- Decorative starfield -->
+  <canvas id="stars" class="starfield"></canvas>
+
+  <header class="relative z-10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500/80 to-fuchsia-500/60 glow"></div>
+        <span class="font-extrabold tracking-tight text-xl">imotara</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+        <a href="#concept" class="hover:text-white">Concept</a>
+        <a href="#team" class="hover:text-white">Team</a>
+        <a href="#updates" class="hover:text-white">Updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero -->
+    <section class="pt-20 pb-12">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl leading-tight font-extrabold">
+            An immortal friend<span class="text-violet-400">*</span><br class="hidden md:block"/> for your emotions
+          </h1>
+          <p class="mt-6 text-lg text-gray-300">We’re quietly building something at the edge of <span class="font-semibold">feeling</span>, <span class="font-semibold">memory</span> and <span class="font-semibold">meaning</span>. It’s not an app you use; it’s a companion that notices. The star (<em>tārā</em>) is only a hint.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#waitlist" class="inline-flex items-center justify-center rounded-2xl bg-violet-500 hover:bg-violet-600 px-5 py-3 font-semibold">Join the early list</a>
+            <a href="#concept" class="inline-flex items-center justify-center rounded-2xl border border-white/15 px-5 py-3 font-semibold">What is it (kind of)?</a>
+          </div>
+          <p class="mt-4 text-xs text-gray-400">*immortal as in <em>keeps your story</em>. Not a claim about longevity.</p>
+        </div>
+        <div class="relative h-[360px] md:h-[460px]">
+          <div class="absolute inset-0 rounded-3xl blur-card p-1">
+            <div class="h-full w-full rounded-2xl shimmer"></div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-40 h-40 rounded-full bg-violet-500/30 blur-3xl"></div>
+          <div class="absolute -top-4 -right-4 w-40 h-40 rounded-full bg-fuchsia-500/30 blur-3xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept teaser -->
+    <section id="concept" class="py-16 border-t border-white/10">
+      <div class="max-w-4xl mx-auto px-6">
+        <p class="uppercase tracking-widest text-xs text-gray-400 mb-4">Concept (teaser)</p>
+        <h2 class="text-2xl md:text-3xl font-bold">It’s not social. It’s not search. It’s not therapy. And it’s definitely not ads.</h2>
+        <p class="mt-6 text-gray-300 leading-relaxed">imotara listens in a way that’s <em>structured</em> but never nosy. It helps you notice patterns without handing your life to a feed. Think of it as a private constellation: dots you choose to connect, with a gentle nudge when a shape emerges. No public timeline. No followers. No likes. Only context.</p>
+        <ul class="mt-8 grid md:grid-cols-3 gap-6">
+          <li class="blur-card p-5 rounded-2xl">
+            <p class="text-sm text-gray-400">Signal, not noise</p>
+            <p class="mt-2 font-semibold">Moments become markers. Markers become meaning.</p>
+          </li>
+          <li class="blur-card p-5 rounded-2xl">
+            <p class="text-sm text-gray-400">Yours, by design</p>
+            <p class="mt-2 font-semibold">Data sovereignty and reversible trust. You hold the keys.</p>
+          </li>
+          <li class="blur-card p-5 rounded-2xl">
+            <p class="text-sm text-gray-400">Quietly proactive</p>
+            <p class="mt-2 font-semibold">When the same star blinks twice, it whispers—not shouts.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="py-16 border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <p class="uppercase tracking-widest text-xs text-gray-400 mb-3">Team</p>
+            <h2 class="text-3xl font-bold">People behind the star</h2>
+          </div>
+          <a href="#waitlist" class="hidden md:inline-flex px-4 py-2 rounded-xl border border-white/15">Get early access</a>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <!-- Soumen -->
+          <article class="blur-card rounded-2xl p-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 glow"></div>
+              <div>
+                <h3 class="font-bold text-lg">Soumen Roy</h3>
+                <p class="text-sm text-gray-400">Founder & Product Vision</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-gray-300">27+ years building bridges between engineering and business across India & SEA. Author of <em>Mastering 3D Plant Engineering</em>. Led SaaS data platforms, AI/ML initiatives, and large-scale digital transformations at OpenLM, Tata Steel, M. N. Dastur, and GRP.</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a class="underline text-gray-300 hover:text-white" href="https://www.soumenroy.com" target="_blank" rel="noopener">Website</a>
+              <a class="underline text-gray-300 hover:text-white" href="https://www.linkedin.com/in/sowmenroy/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </article>
+
+          <!-- Somsubhra -->
+          <article class="blur-card rounded-2xl p-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 glow"></div>
+              <div>
+                <h3 class="font-bold text-lg">Somsubhra Roy</h3>
+                <p class="text-sm text-gray-400">Co‑founder & Partner (Finance)</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-gray-300">Operator-investor mindset with a focus on prudent growth and measurable outcomes. Brings hands-on finance discipline and partner governance to imotara. (Profile synopsis to be expanded.)</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a class="underline text-gray-300 hover:text-white" href="https://www.linkedin.com/in/somsubhra-roy-931108b4/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </article>
+
+          <!-- Tapan -->
+          <article class="blur-card rounded-2xl p-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 glow"></div>
+              <div>
+                <h3 class="font-bold text-lg">Tapan Kumar Karmakar</h3>
+                <p class="text-sm text-gray-400">Co‑founder & Partner (Finance)</p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-gray-300">Seasoned partner with experience in building resilient operations and long-term partnerships. Focused on sustainable scale, compliance, and trust. (Profile synopsis to be expanded.)</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a class="underline text-gray-300 hover:text-white" href="https://www.linkedin.com/in/tapan-kumar-karmakar-79878429/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="mt-6 text-xs text-gray-400">Want your detailed bio included? Send a short 3–4 line summary and we’ll update instantly.</p>
+      </div>
+    </section>
+
+    <!-- Waitlist / Updates -->
+    <section id="waitlist" class="py-16 border-t border-white/10">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold">Be among the first</h2>
+        <p class="mt-4 text-gray-300">Early access gets quiet drops, behind-the-scenes notes, and a private invite when the star blinks.</p>
+        <form class="mt-8 grid sm:grid-cols-6 gap-3" action="https://formspree.io/f/your-id" method="POST">
+          <input type="hidden" name="project" value="imotara" />
+          <input class="sm:col-span-3 rounded-xl bg-white/5 border border-white/10 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500" type="text" name="name" placeholder="Your name" required>
+          <input class="sm:col-span-3 rounded-xl bg-white/5 border border-white/10 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500" type="email" name="email" placeholder="Email address" required>
+          <textarea class="sm:col-span-6 rounded-xl bg-white/5 border border-white/10 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500" name="note" rows="3" placeholder="Say hi or tell us why you’re curious (optional)"></textarea>
+          <button class="sm:col-span-6 inline-flex items-center justify-center rounded-2xl bg-violet-500 hover:bg-violet-600 px-5 py-3 font-semibold" type="submit">Join the list</button>
+        </form>
+        <p class="mt-3 text-xs text-gray-500">We’ll email only when it matters. No ads. No tracking pixels.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+        <p>© <span id="year"></span> imotara labs • Kolkata, India</p>
+        <div class="flex items-center gap-4">
+          <a href="mailto:hello@imotara.com" class="hover:text-white">hello@imotara.com</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white">Privacy (we’re serious)</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Minimal starfield
+    const c = document.getElementById('stars');
+    const ctx = c.getContext('2d');
+    const resize = () => { c.width = innerWidth; c.height = innerHeight; draw(); };
+    const rand = (min, max) => Math.random() * (max - min) + min;
+    const stars = Array.from({length: 220}, () => ({ x: Math.random(), y: Math.random(), r: Math.random()*1.2+0.2, a: Math.random()*0.6+0.2 }));
+    function draw(){
+      ctx.clearRect(0,0,c.width,c.height);
+      for(const s of stars){
+        const x = s.x * c.width;
+        const y = s.y * c.height;
+        ctx.beginPath();
+        ctx.arc(x, y, s.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(139,92,246,${s.a})`;
+        ctx.fill();
+      }
+    }
+    window.addEventListener('resize', resize, {passive:true});
+    resize();
+  </script>
+</body>
+</html>
